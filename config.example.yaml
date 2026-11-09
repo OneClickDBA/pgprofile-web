@@ -1,0 +1,24 @@
+application:
+  timezone: Europe/Madrid
+
+postgresql:
+  host: pgprofile.internal
+  port: 5432
+  database: postgres
+  user: pgprofile_web
+  sslmode: verify-full
+  # sslrootcert: /etc/pgprofile-web/root.crt
+  # passfile: /etc/pgprofile-web/pgpass
+  connect_timeout: 10
+  statement_timeout_seconds: 120
+
+reports:
+  cache_directory: /var/cache/pgprofile-web
+  max_interval_hours: 24
+  recent_reports: 10
+  server_name: local
+  regular_function: public.get_report
+  differential_function: public.get_diffreport
+
+logging:
+  level: INFO
